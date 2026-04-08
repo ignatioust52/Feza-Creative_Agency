@@ -27,7 +27,7 @@ export default function Header() {
           >
             <div className="flex h-12 sm:h-14 items-center justify-center rounded-xl bg-white px-3 py-1.5 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
               <img
-                src="/feza-logo.png"
+                src="/feza-logo.webp"
                 alt="Feza Creative Agency Logo"
                 className="h-full w-auto object-contain"
                 onError={(e) => {

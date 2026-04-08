@@ -86,7 +86,7 @@ export default function Hero() {
               <div className="mb-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
                 <div className="flex h-20 sm:h-24 shrink-0 items-center justify-center rounded-3xl bg-white px-6 py-3 shadow-xl ring-2 ring-white/10">
                   <img
-                    src="/feza-logo.png"
+                    src="/feza-logo.webp"
                     alt="Feza Design"
                     className="h-full w-auto object-contain"
                     onError={(e) => {

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <div className="flex h-12 items-center justify-center rounded-xl bg-white px-3 py-1.5">
               <img
-                src="/feza-logo.png"
+                src="/feza-logo.webp"
                 alt="Feza Logo"
                 className="h-full w-auto object-contain"
                 onError={(e) => {
