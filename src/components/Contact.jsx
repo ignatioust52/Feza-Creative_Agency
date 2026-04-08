@@ -61,7 +61,7 @@ export default function Contact() {
                   <Phone size={24} />
                 </div>
                 <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Phone / WhatsApp</p>
-                <p className="text-lg font-bold text-white">0772 966 597</p>
+                <p className="text-lg font-bold text-white">0762 560 175<br/>0758 270 985</p>
               </div>
 
               <div className="group rounded-[2rem] border border-white/5 bg-white/[0.03] p-8 transition-colors hover:bg-white/[0.08]">
@@ -69,7 +69,7 @@ export default function Contact() {
                   <Mail size={24} />
                 </div>
                 <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Email</p>
-                <p className="text-lg font-bold text-white break-all">hello@fezacreative.com</p>
+                <p className="text-base sm:text-lg font-bold text-white break-all">fezacreativeagency@gmail.com</p>
               </div>
 
               <div className="group rounded-[2rem] border border-white/5 bg-white/[0.03] p-8 transition-colors hover:bg-white/[0.08]">

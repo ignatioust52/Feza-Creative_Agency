@@ -25,11 +25,11 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3"
           >
-            <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white p-2 shadow-[0_0_15px_rgba(255,255,255,0.2)] ring-1 ring-white/20">
+            <div className="flex h-12 sm:h-14 items-center justify-center rounded-xl bg-white px-3 py-1.5 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
               <img
                 src="/feza-logo.png"
                 alt="Feza Creative Agency Logo"
-                className="h-full w-full object-contain"
+                className="h-full w-auto object-contain"
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.parentElement.innerHTML = '<span class="text-black font-bold text-xl">F</span>';

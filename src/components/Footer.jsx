@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
           
           <div className="flex items-center gap-4">
-            <div className="h-12 w-12 rounded-xl bg-white p-2">
+            <div className="flex h-12 items-center justify-center rounded-xl bg-white px-3 py-1.5">
               <img
                 src="/feza-logo.png"
                 alt="Feza Logo"
-                className="h-full w-full object-contain"
+                className="h-full w-auto object-contain"
                 onError={(e) => {
                   e.target.style.display = 'none';
                   e.target.parentElement.innerHTML = '<span class="text-black font-black text-xl flex h-full items-center justify-center">F</span>';

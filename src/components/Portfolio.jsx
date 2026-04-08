@@ -4,9 +4,31 @@ import { works } from '../data/constants';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Portfolio() {
+  // Dynamically load all images dropped into the public/portfolio directory
+  const imageModules = import.meta.glob('/public/portfolio/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG}', { eager: true });
+  
+  const dynamicWorks = Object.keys(imageModules).map((filepath) => {
+    // Extract filename and format as title
+    const filename = filepath.split('/').pop();
+    const title = filename.replace(/\.[^/.]+$/, "").replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+    
+    return {
+      title,
+      type: "Portfolio Project",
+      // Remove '/public' prefix because static assets are served from the root
+      image: filepath.replace('/public', '')
+    };
+  });
+
+  // Combine any static works in constants with the dynamically found ones (avoiding duplicates)
+  const existingTitles = new Set(works.map(w => w.title));
+  const newDynamicWorks = dynamicWorks.filter(w => !existingTitles.has(w.title));
+  
+  const allWorks = [...works, ...newDynamicWorks];
+
   // How many placeholder slots to show after rendering specific works
   const totalSlots = 12;
-  const placeholdersCount = Math.max(0, totalSlots - works.length);
+  const placeholdersCount = Math.max(0, totalSlots - allWorks.length);
   const placeholderProjects = [...Array(placeholdersCount)];
 
   return (
@@ -43,16 +65,16 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-4 text-white/50 text-base"
+              className="mt-6 max-w-xl text-white/60 text-base leading-relaxed"
             >
-              A curated collection of bold ideas turned into memorable brands. Space allocated below for 100+ creative works.
+              A curated snapshot of our visual capabilities. Please note that a significant portion of our portfolio—including executive projects, unreleased campaign materials, and heavy motion graphics—remains strictly confidential out of respect for our clients' privacy and approval policies.
             </motion.p>
           </div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {/* Render Actual Projects */}
-          {works.map((item, index) => (
+          {allWorks.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
@@ -119,8 +141,10 @@ export default function Portfolio() {
           ))}
         </div>
         
-        <div className="mt-12 text-center border-t border-white/5 pt-8">
-           <p className="text-xs font-semibold uppercase tracking-widest text-green-500/50">Space ready for upcoming updates</p>
+        <div className="mt-16 sm:mt-20 text-center border-t border-white/5 pt-10">
+           <p className="text-sm font-medium text-white/40 max-w-2xl mx-auto">
+             Looking for something specific? We hold hundreds of specialized designs in our offline archives. <a href="#contact" className="text-yellow-500 hover:text-yellow-400 underline decoration-white/20 underline-offset-4 transition-colors">Contact us</a> to request a tailored portfolio presentation.
+           </p>
         </div>
       </div>
     </section>

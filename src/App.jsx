@@ -23,7 +23,7 @@ export default function FezaCreativeAgencyHomepage() {
       
       {/* WhatsApp Floating Action Button */}
       <a
-        href="https://wa.me/256772966597"
+        href="https://wa.me/256762560175"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 z-40 flex items-center justify-center p-4 rounded-full bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.4)] transition hover:bg-green-400 hover:scale-110 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] group"

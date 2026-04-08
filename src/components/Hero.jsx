@@ -84,11 +84,11 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a2b21]/80 p-8 shadow-2xl backdrop-blur-xl">
               
               <div className="mb-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-                <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-white p-3 shadow-xl ring-2 ring-white/10">
+                <div className="flex h-20 sm:h-24 shrink-0 items-center justify-center rounded-3xl bg-white px-6 py-3 shadow-xl ring-2 ring-white/10">
                   <img
                     src="/feza-logo.png"
                     alt="Feza Design"
-                    className="h-full w-full object-contain"
+                    className="h-full w-auto object-contain"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.parentElement.innerHTML = '<span class="text-black font-black text-3xl">F</span>';
