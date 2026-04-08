@@ -20,9 +20,9 @@ export default function Portfolio() {
     };
   });
 
-  // Combine any static works in constants with the dynamically found ones (avoiding duplicates)
-  const existingTitles = new Set(works.map(w => w.title));
-  const newDynamicWorks = dynamicWorks.filter(w => !existingTitles.has(w.title));
+  // Combine any static works in constants with the dynamically found ones (avoiding exact duplicates by title)
+  const existingTitles = new Set(works.map(w => w.title.toLowerCase()));
+  const newDynamicWorks = dynamicWorks.filter(w => !existingTitles.has(w.title.toLowerCase()));
   
   const allWorks = [...works, ...newDynamicWorks];
 
@@ -89,6 +89,8 @@ export default function Portfolio() {
                 <img 
                   src={item.image} 
                   alt={item.title} 
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   onError={(e) => {
                     e.target.style.display = 'none';
